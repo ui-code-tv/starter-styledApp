@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+
+ /* Global styles */
+ html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+}
+body {
+  margin: 0 2em;
+}
+/* Login Page */
+#login-form {
+ width: 20vw;
+ margin: 20vh auto;
+ border: 1px dotted silver;
+ padding: 26px 32px 32px;
+ border-radius: 2px;
+ box-shadow: rgb(0 0 0 / 20%) 3px 6px 10px;
+ background: linear-gradient(to bottom, #91d6d6 0%, #5c62c0 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#login-form label {
+ display: block;
+ margin-bottom: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#login-form input {
+ display: block;
+ width: 100%;
+ border: 1px solid black;
+ border-bottom-width: 2px;
+ padding: 6px 0 6px 2px;
+ margin-top: 4px;
+ border-radius: 2px 2px 3px 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Heading */
+h2 {
+ margin: 14px 0;
+ text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* Buttons */
+button  {
+ display: inline-block;
+ width: max-content;
+ padding: 8px;
+ border: 1px solid black;
+ font-size: 1rem;
+ font-weight: 600;
+ text-transform: uppercase;
+ border-radius: 3px;
+ cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#login-form button[type=submit] {
+ margin-top: 40px;
+ background: black;
+ color: white;
+ border: none;
+ width:100%;
+ display:block;
 }
+
+button.primary {
+ background-color: green;
+ color: white;
+}
+button.secondary {
+ background-color: red;
+ color: white;
+}
+
+button.small {
+font-size: 0.6rem;
+}
+
+.card button.small{
+ position: relative;
+ float:right;
+}
+
+/* Container and cards */
+.container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ padding: 1em 0;
+ text-align: left;
+}
+
+.card {
+ width: 30%;
+ display: flex;
+ background: #eee;
+ padding: .6em 1em .6em .6em;
+ margin-bottom: 1em;
+ border-radius: .3em;
+ box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
+ border: solid 1px #ccc;
+}
+
+.card h3 {
+ margin: 0;
+ font-size: 1em;
+}
+
+.content p {
+ margin: 0;
+ font-size: .7em;
+ color: #222;
+}
+
+.card .img {
+  min-width: 80px;
+  height: 80px;
+  border-radius: .3em;
+  background: linear-gradient(to bottom, #91d6d6 0%, #5c62c0 100%);
+  opacity: .7;
+  margin: 0 .6em 0 0;
+  border: solid 3px #3c22b2;
+}
+
+@media (max-width: 820px) {
+ .container {
+   min-width: auto;
+   display: block;
+ }
+ .card {
+   width: 100%;
+ }
+}
+
+@media (max-width: 480px) {
+ .card {
+   box-shadow: none;
+ }
+}
+
