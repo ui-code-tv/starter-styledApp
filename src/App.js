@@ -1,12 +1,36 @@
 import { useState } from "react";
 import "./App.css";
 
+
+// Root app - Conditionally render login page or protected page
+// Depends on isLoggedIn state variable
+export default function App() {
+  const [isloggedIn, setIsLoggedIn] = useState(false);
+  if (isloggedIn) {
+    return (
+      <>
+        <ProtectedPage />
+      </>
+    );
+  }
+  return (
+    <LoginPage
+      handleSubmit={(ev) => {
+        ev.preventDefault();
+        setIsLoggedIn(true);
+      }}
+    />
+  );
+
+}
+
+// Login Page
 function LoginPage({ handleSubmit }) {
   return (
     <form id="login-form" onSubmit={handleSubmit}>
       <label>
         Email:
-        <input className="input" type="email" placeholder="me@you.com" />
+        <input className="input" type="email" placeholder="me@mail.com" />
       </label>
       <label>
         Password:
@@ -17,6 +41,7 @@ function LoginPage({ handleSubmit }) {
   );
 }
 
+// Protected page displays some cards with course details
 function ProtectedPage({ handleSubmit }) {
   return (
     <>
@@ -95,23 +120,3 @@ function ProtectedPage({ handleSubmit }) {
     </>
   );
 }
-export default function App() {
-  const [isloggedIn, setIsLoggedIn] = useState(false);
-  if (isloggedIn) {
-    return (
-      <>
-        <ProtectedPage />
-      </>
-    );
-  }
-  return (
-    <LoginPage
-      handleSubmit={(ev) => {
-        ev.preventDefault();
-        setIsLoggedIn(true);
-      }}
-    />
-  );
-
-}
-

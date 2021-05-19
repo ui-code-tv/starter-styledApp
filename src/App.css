@@ -1,5 +1,17 @@
-
  /* Global styles */
+ :root{
+  --primarycolor:green;
+  --secondarycolor:red;
+  --color1:black;
+  --color2:white;
+  --color3:blue;
+  --buttonTextColor-1:white;
+  --buttonTextColor-2:black;
+  --gcolor1: #77b5fd;
+  --gcolor2: #2a08eb;
+  --gradient: linear-gradient(to bottom, var(--gcolor1) 0%, var(--gcolor2) 100%);
+ }
+
  html {
   font-family: 'Roboto', sans-serif;
   font-size: 1.3em;
@@ -15,7 +27,7 @@ body {
  padding: 26px 32px 32px;
  border-radius: 2px;
  box-shadow: rgb(0 0 0 / 20%) 3px 6px 10px;
- background: linear-gradient(to bottom, #91d6d6 0%, #5c62c0 100%);
+ background: var(--gradient);
 }
 
 #login-form label {
@@ -55,19 +67,19 @@ button  {
 #login-form button[type=submit] {
  margin-top: 40px;
  background: black;
- color: white;
+ color: var(--buttonTextColor-1);
  border: none;
  width:100%;
  display:block;
 }
 
 button.primary {
- background-color: green;
- color: white;
+ background-color: var(--primarycolor);
+ color: var(--buttonTextColor-1);
 }
 button.secondary {
- background-color: red;
- color: white;
+ background-color: var(--secondarycolor);
+ color: var(--buttonTextColor-1);
 }
 
 button.small {
@@ -114,7 +126,7 @@ font-size: 0.6rem;
   min-width: 80px;
   height: 80px;
   border-radius: .3em;
-  background: linear-gradient(to bottom, #91d6d6 0%, #5c62c0 100%);
+  background: var(--gradient);
   opacity: .7;
   margin: 0 .6em 0 0;
   border: solid 3px #3c22b2;
@@ -134,5 +146,32 @@ font-size: 0.6rem;
  .card {
    box-shadow: none;
  }
+}educed-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
